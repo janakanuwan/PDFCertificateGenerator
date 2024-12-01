@@ -58,3 +58,7 @@ Execute the script using the following command:
 ```
 python generate_letters.py
 ```
+
+## References
+
+- Some codes are generated with the help of ChatGPT
