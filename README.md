@@ -59,6 +59,8 @@ Execute the script using the following command:
 python generate_letters.py
 ```
 
+Resulting Word and PDF files will be inside "GeneratedLetters" folder.
+
 ## References
 
 - Some codes are generated with the help of ChatGPT
