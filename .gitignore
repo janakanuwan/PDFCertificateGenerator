@@ -3,6 +3,34 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+GeneratedLetters/
+
+# System Files
+.DS_Store
+Thumbs.db
+/local.properties
+
+# IDEs and editors
+.idea
+.gradle
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+proguard/
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Log file
+*.log
+
 # C extensions
 *.so
 
