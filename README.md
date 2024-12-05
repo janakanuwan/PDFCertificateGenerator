@@ -5,6 +5,7 @@ template. The letters are saved as PDF files.
 
 ## Requirements
 
+- Microsoft Word is installed
 - **Python Version**: Python 3.8 or later
 - **Python Libraries**:
     - `pandas`
@@ -30,8 +31,8 @@ Run the following commands to create and activate a virtual environment:
 #### On macOS/Linux:
 
 ```bash
-python -m venv venv
-source venv/bin/activate
+python -m venv recommendation
+source recommendation/bin/activate
 ```
 
 ### Step 3: Install Required Libraries
