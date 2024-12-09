@@ -31,10 +31,10 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 for _, row in data.iterrows():
     try:
         # Extract data
-        recommendation_id = row.get("ID", None)
-        committee = row.get("Recommendation-Committee", None)
-        position = row.get("Recommendation-Position", "")
-        department = row.get("Recommendation-Department", "")
+        recommendation_id = row["ID"]
+        committee = row["Recommendation-Committee"]
+        position = row["Recommendation-Position"]
+        department = row["Recommendation-Department"]
 
         print(
             f"\nProcessing row ID: [{recommendation_id}], Committee: [{committee}], Position: [{position}], Department: [{department}]"
@@ -87,9 +87,9 @@ for _, row in data.iterrows():
         print(f"Generated PDF for ID: {recommendation_id}")
 
     except KeyError as e:
-        print(f"Missing expected column in row: {e}")
+        print(f"Failed to generate. Missing expected column in row: {e}")
         exit()
     except Exception as e:
         print(f"Error processing row ID {row['ID']}: {e}")
 
-print("\nProcessing complete.")
+print("\nProcessing complete!")
