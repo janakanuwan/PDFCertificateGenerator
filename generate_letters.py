@@ -31,10 +31,26 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 for _, row in data.iterrows():
     try:
         # Extract data
-        recommendation_id = str(row["ID"])
-        committee = row["Recommendation-Committee"]
-        position = row["Recommendation-Position"]
-        department = row["Recommendation-Department"]
+        recommendation_id = row.get("ID", None)
+        committee = row.get("Recommendation-Committee", None)
+        position = row.get("Recommendation-Position", "")
+        department = row.get("Recommendation-Department", "")
+
+        print(
+            f"\nProcessing row ID: [{recommendation_id}], Committee: [{committee}], Position: [{position}], Department: [{department}]"
+        )
+
+        # Check for NaN values and handle them explicitly
+        if (pd.isna(recommendation_id) or pd.isna(committee) or
+                not str(recommendation_id).strip() or not str(committee).strip()):
+            print(f"Skipping row due to empty ID or Committee")
+            continue
+
+        # Convert values to strings and strip whitespace or handle NaN
+        recommendation_id = "" if pd.isna(recommendation_id) else str(recommendation_id).strip()
+        committee = "" if pd.isna(committee) else str(committee).strip()
+        position = "" if pd.isna(position) else str(position).strip()
+        department = "" if pd.isna(department) else str(department).strip()
 
         # Open the Word template
         try:
@@ -70,7 +86,10 @@ for _, row in data.iterrows():
 
         print(f"Generated PDF for ID: {recommendation_id}")
 
+    except KeyError as e:
+        print(f"Missing expected column in row: {e}")
+        exit()
     except Exception as e:
         print(f"Error processing row ID {row['ID']}: {e}")
 
-print("Processing complete.")
+print("\nProcessing complete.")
