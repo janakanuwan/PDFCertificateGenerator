@@ -31,8 +31,8 @@ Run the following commands to create and activate a virtual environment:
 #### On macOS/Linux:
 
 ```bash
-python -m venv recommendation
-source recommendation/bin/activate
+python -m venv certificate
+source certificate/bin/activate
 ```
 
 ### Step 3: Install Required Libraries
