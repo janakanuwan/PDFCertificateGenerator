@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-GeneratedLetters/
+GeneratedCertificates/
 
 # System Files
 .DS_Store
